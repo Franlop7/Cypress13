@@ -18,4 +18,22 @@ describe('home spec', () => {
       
     })
   })
+
+  context('Seccion de cursos' , () => {
+
+    it('curso: Testing Your First Next.js Application', () => {
+      cy.getByData('course-0').find('a').contains('Get started').click()
+      cy.location('pathname').should('equal', '/testing-your-first-application')
+    })
+
+    it('curso: Testing Foundations',() => {
+      cy.getByData('course-1').find('a').contains('Get started').click()
+      cy.location('pathname').should('equal', '/testing-foundations')
+    })
+
+    it('curso: Cypress Fundamentals ',() => {
+      cy.getByData('course-2').find('a').contains('Get started').click()
+      cy.location('pathname').should('equal', '/cypress-fundamentals')
+    })
+  })
 })
